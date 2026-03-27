@@ -5,15 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
+    <!-- TÍTULO E DESCRIÇÃO PRINCIPAIS -->
     <title>Advogado Previdenciário | Especialista em Aposentadoria INSS</title>
     <meta name="description" content="Especialista em Direito Previdenciário e Aposentadoria. Planejamento estratégico de alto nível. Atendimento em Salvador e todo o Brasil com excelência.">
     <meta name="keywords" content="advogado previdenciário salvador, planejamento previdenciário, aposentadoria INSS, advogado online, aposentadoria por idade, revisão de benefícios">
     <meta name="author" content="Dr. Reginaldo - Advogado Nômade Premium">
     
+    <!-- SEO AVANÇADO: CANONICAL E GOOGLE SEARCH CONSOLE -->
+    <link rel="canonical" href="https://www.advogadonomade.com.br/previdencia">
+    <!-- ATENÇÃO: Substitua o 'COLE_SEU_CODIGO_AQUI' pelo código fornecido no painel do Google Search Console -->
+    <meta name="google-site-verification" content="COLE_SEU_CODIGO_AQUI" />
+
+    <!-- OPEN GRAPH (Otimização para compartilhamento no WhatsApp, Facebook, LinkedIn) -->
+    <meta property="og:title" content="Advocacia Previdenciária de Elite | Advogado Nômade">
+    <meta property="og:description" content="Garanta a melhor aposentadoria possível com um planejamento previdenciário estratégico e personalizado. Atendimento em todo o Brasil.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1200&auto=format&fit=crop">
+    <meta property="og:url" content="https://www.advogadonomade.com.br/previdencia">
+    <meta property="og:type" content="website">
+    
+    <!-- FONTES DO GOOGLE -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
+    <!-- SCHEMA MARKUP (Dados estruturados para o Google entender que é um negócio local/serviço jurídico) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -55,7 +70,6 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Menu de Navegação Glassmorphism */
         .navbar {
             position: fixed;
             top: 0;
@@ -114,7 +128,7 @@
             color: #000!important;
         }
 
-        /* Hero Section com Vídeo de Fundo */
+        /* Hero Section com Imagem Premium Estática */
         .hero-section {
             position: relative;
             min-height: 100vh;
@@ -124,20 +138,22 @@
             padding: 2rem;
             overflow: hidden;
             text-align: center;
+            background-color: var(--bg-dark);
         }
 
-        .video-bg {
+        /* Nova classe de background substituindo o vídeo */
+        .hero-bg {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            transform: translateX(-50%) translateY(-50%);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Efeito parallax suave */
             z-index: 0;
-            object-fit: cover;
-            opacity: 0.5;
+            opacity: 0.35; /* Mantém a imagem sutil e elegante */
         }
 
         .overlay {
@@ -146,7 +162,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(180deg, rgba(10, 15, 28, 0.7) 0%, rgba(10, 15, 28, 0.4) 50%, rgba(10, 15, 28, 1) 100%);
+            background: linear-gradient(180deg, rgba(10, 15, 28, 0.8) 0%, rgba(10, 15, 28, 0.6) 50%, rgba(10, 15, 28, 1) 100%);
             z-index: 1;
         }
 
@@ -287,7 +303,6 @@
             overflow: hidden;
         }
 
-        /* Efeito de brilho no hover */
         .bento-card::before {
             content: '';
             position: absolute;
@@ -344,7 +359,6 @@
             text-transform: uppercase;
         }
 
-        /* Responsividade */
         @media (max-width: 992px) {
             .hero-content h1 { font-size: 3.5rem; }
             .bento-grid { grid-template-columns: repeat(2, 1fr); }
@@ -375,10 +389,8 @@
     </nav>
 
     <section class="hero-section">
-        <video class="video-bg" autoplay loop muted playsinline>
-            <!-- AQUI ESTÁ A CORREÇÃO: Usando um arquivo local. -->
-            <source src="video.mp4" type="video/mp4">
-        </video>
+        <!-- Background Premium substitui o vídeo -->
+        <div class="hero-bg"></div>
         <div class="overlay"></div>
 
         <div class="hero-content">
