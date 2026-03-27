@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Calculadora INSS 2026 | Advogado Previdenciário</title>
+    <meta name="description" content="Utilize nossa calculadora INSS 2026 exata. Descubra seus direitos de aposentadoria por pontos, pedágio 50% e 100% ou idade progressiva.">
+    <meta name="author" content="Dr. Reginaldo - Advogado Nômade Premium">
+    
+    <!-- SEO AVANÇADO: CANONICAL -->
+    <link rel="canonical" href="https://www.advogadonomade.com.br/calculadora">
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:title" content="Calculadora INSS 2026 | Descubra quando vai se aposentar">
+    <meta property="og:description" content="Simule gratuitamente sua aposentadoria com base nas regras atualizadas de 2026.">
+    <meta property="og:image" content="https://www.advogadonomade.com.br/fundo.jpg">
+    <meta property="og:url" content="https://www.advogadonomade.com.br/calculadora">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-dark: #0A0F1C; 
+            --bg-card: rgba(15, 23, 42, 0.75); 
+            --text-light: #F8FAFC;
+            --text-muted: #94A3B8;
+            --accent-gold: #D4AF37; 
+            --accent-gold-hover: #B5952F;
+            --success-green: #10B981;
+            --error-red: #EF4444;
+            --font-sans: 'Inter', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Navegação Harmonizada (Padrão Home) */
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(10, 15, 28, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .logo {
+            font-family: var(--font-sans);
+            font-size: 1.5rem;
+            color: var(--text-light);
+            font-weight: 700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i { color: var(--accent-gold); }
+        .logo span { color: var(--text-muted); font-family: var(--font-serif); font-size: 1.2rem; font-style: italic; }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 2.5rem;
+            font-weight: 600;
+            font-size: 0.90rem;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover, .nav-links a.active { color: var(--accent-gold); }
+
+        .nav-btn {
+            border: 1px solid var(--accent-gold);
+            padding: 0.6rem 1.5rem;
+            border-radius: 4px;
+            color: var(--accent-gold)!important;
+        }
+        
+        .nav-btn:hover {
+            background: var(--accent-gold);
+            color: #000!important;
+        }
+
+        /* Estrutura Principal Calculadora */
+        .calc-section {
+            position: relative;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 2rem 4rem 2rem;
+            overflow: hidden;
+        }
+
+        /* Fundo Absoluto (Mesmo da Landing Page) */
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://www.advogadonomade.com.br/fundo.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            z-index: 0;
+            opacity: 0.30;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 15, 28, 0.92) 0%, rgba(10, 15, 28, 0.80) 100%);
+            z-index: 1;
+        }
+
+        .calculator-card {
+            position: relative;
+            z-index: 2;
+            background: var(--bg-card);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 3rem;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6);
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .calculator-card h2 {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+            color: var(--accent-gold);
+        }
+
+        .calculator-card p.subtitle {
+            text-align: center;
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+        }
+
+        .form-group { margin-bottom: 1.8rem; }
+
+        .form-group label {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+            color: var(--text-light);
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            background: rgba(10, 15, 28, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 6px;
+            color: white;
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s ease, background-color 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            border-color: var(--accent-gold);
+            background: rgba(10, 15, 28, 0.9);
+        }
+
+        .input-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--accent-gold);
+            color: #000;
+            font-weight: 700;
+            padding: 1.2rem 2.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            width: 100%;
+            margin-top: 1rem;
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-gold-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Estilização do Relatório Dinâmico */
+        #result-box {
+            margin-top: 2.5rem;
+            padding: 2rem;
+            border-radius: 8px;
+            background: rgba(10, 15, 28, 0.85);
+            border-left: 5px solid transparent;
+            display: none;
+            animation: fadeIn 0.6s ease;
+        }
+
+        .result-success { border-left-color: var(--success-green)!important; }
+        .result-warning { border-left-color: var(--accent-gold)!important; }
+
+        .result-item {
+            margin-bottom: 1.2rem;
+            padding-bottom: 1.2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .result-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .result-title {
+            font-weight: 700;
+            font-size: 1.15rem;
+            margin-bottom: 0.3rem;
+            letter-spacing: -0.3px;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.8rem;
+        }
+        
+        .badge-yes { background: rgba(16, 185, 129, 0.15); color: var(--success-green); border: 1px solid rgba(16, 185, 129, 0.3); }
+        .badge-no { background: rgba(212, 175, 55, 0.15); color: var(--accent-gold); border: 1px solid rgba(212, 175, 55, 0.3); }
+
+        .trust-bar {
+            background: #060913;
+            padding: 1.5rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .trust-bar p {
+            font-size: 0.85rem;
+            color: #64748B;
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 768px) {
+            .navbar { flex-direction: column; gap: 1rem; padding: 1rem; }
+            .nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+            .nav-links a { margin: 0 10px; }
+            .input-row { grid-template-columns: 1fr; gap: 0.5rem; }
+            .calc-section { padding-top: 10rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="https://www.advogadonomade.com.br" class="logo">
+            <i class="fas fa-balance-scale"></i> Dr.Reginaldo <span> | Previdência</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Início</a>
+            <a href="calculadora.html" class="active">Simulador INSS</a>
+            <a href="https://wa.me/5571983008001" target="_blank" class="nav-btn">Falar com Especialista</a>
+        </div>
+    </nav>
+
+    <section class="calc-section">
+        <!-- Background Premium substitui o vídeo -->
+        <div class="hero-bg"></div>
+        <div class="overlay"></div>
+
+        <div class="calculator-card">
+            <h2>Simulador Algorítmico INSS 2026</h2>
+            <p class="subtitle">Análise Técnica das Regras Oficiais de Transição (Atualizado 2026)</p>
+
+            <form id="inssForm">
+                <div class="form-group">
+                    <label for="sexo">Categoria de Gênero</label>
+                    <select id="sexo" required>
+                        <option value="" disabled selected>Selecione seu gênero para análise...</option>
+                        <option value="F">Feminino</option>
+                        <option value="M">Masculino</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Idade Atual</label>
+                    <div class="input-row">
+                        <input type="number" id="idadeAnos" placeholder="Anos" min="18" max="100" required>
+                        <input type="number" id="idadeMeses" placeholder="Meses" min="0" max="11" value="0">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Tempo de Contribuição Atual</label>
+                    <div class="input-row">
+                        <input type="number" id="contribTotalAnos" placeholder="Anos totais" min="0" max="80" required>
+                        <input type="number" id="contribTotalMeses" placeholder="Meses" min="0" max="11" value="0">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Tempo de Contribuição até a Reforma (13/11/2019)</label>
+                    <div class="input-row">
+                        <input type="number" id="contrib2019Anos" placeholder="Anos registrados até 2019" min="0" max="80" required>
+                        <input type="number" id="contrib2019Meses" placeholder="Meses" min="0" max="11" value="0">
+                    </div>
+                </div>
+
+                <button type="button" class="btn-primary" onclick="calcularAposentadoria()">Processar Diagnóstico</button>
+            </form>
+
+            <div id="result-box">
+                <h3 style="color: var(--accent-gold); margin-bottom: 1.5rem; font-size: 1.3rem; border-bottom: 1px solid rgba(212,175,55,0.3); padding-bottom: 0.5rem;">Relatório Técnico do Diagnóstico:</h3>
+                <div id="results-content"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="trust-bar">
+        <p>OAB/SC 57.879 • Dados Processados Localmente para Privacidade</p>
+    </section>
+
+    <script>
+        function calcularAposentadoria() {
+            const sexo = document.getElementById('sexo').value;
+            
+            const idadeAnos = parseInt(document.getElementById('idadeAnos').value) || 0;
+            const idadeMeses = parseInt(document.getElementById('idadeMeses').value) || 0;
+            const idadeDecimal = idadeAnos + (idadeMeses / 12);
+            
+            const contribTotalAnos = parseInt(document.getElementById('contribTotalAnos').value) || 0;
+            const contribTotalMeses = parseInt(document.getElementById('contribTotalMeses').value) || 0;
+            const contribTotalDecimal = contribTotalAnos + (contribTotalMeses / 12);
+            
+            const contrib2019Anos = parseInt(document.getElementById('contrib2019Anos').value) || 0;
+            const contrib2019Meses = parseInt(document.getElementById('contrib2019Meses').value) || 0;
+            const contrib2019Decimal = contrib2019Anos + (contrib2019Meses / 12);
+
+            if (!sexo || idadeAnos === 0 || contribTotalAnos === 0) {
+                alert("Preencha todos os campos obrigatórios em anos e o seu gênero.");
+                return;
+            }
+
+            // Variáveis e Progressões para 2026
+            let reqContrib = sexo === 'M' ? 35 : 30; 
+            let reqIdadeProgressiva = sexo === 'M' ? 64.5 : 59.5; 
+            let reqPontos = sexo === 'M' ? 103 : 93;
+            let reqPedagioIdade = sexo === 'M' ? 60 : 57; 
+            let preReqPedagio50 = sexo === 'M' ? 33 : 28; 
+            let regraIdadeGeral = sexo === 'M' ? 65 : 62;
+            let reqContribGeral = 15; 
+
+            let resultados = [];
+            let elegibilidadeConfirmada = false;
+
+            // 1. Idade Mínima Progressiva
+            let validaIdadeProg = (contribTotalDecimal >= reqContrib && idadeDecimal >= reqIdadeProgressiva);
+            if (validaIdadeProg) elegibilidadeConfirmada = true;
+            resultados.push({
+                nome: "Transição: Idade Mínima Progressiva",
+                status: validaIdadeProg,
+                detalhe: validaIdadeProg ? "Elegível. Você atende a idade progressiva exigida." : `A legislação de 2026 exige ${reqIdadeProgressiva} anos de idade e ${reqContrib} anos de contribuição.`
+            });
+
+            // 2. Sistema de Pontos
+            let pontosAtuaisCalculados = idadeDecimal + contribTotalDecimal;
+            let validaPontos = (contribTotalDecimal >= reqContrib && pontosAtuaisCalculados >= reqPontos);
+            if (validaPontos) elegibilidadeConfirmada = true;
+            resultados.push({
+                nome: "Transição: Sistema de Pontos",
+                status: validaPontos,
+                detalhe: validaPontos ? `Elegível. Você soma ${pontosAtuaisCalculados.toFixed(1)} pontos.` : `Você soma ${pontosAtuaisCalculados.toFixed(1)} pontos. O exigido para 2026 é de ${reqPontos} pontos.`
+            });
+
+            // 3. Pedágio 50%
+            let validaPedagio50 = false;
+            let parecerPedagio50 = "";
+            if (contrib2019Decimal >= preReqPedagio50 && contrib2019Decimal < reqContrib) {
+                let onustemporal50 = (reqContrib - contrib2019Decimal) * 0.5;
+                let metaTemporalExigida = reqContrib + onustemporal50;
+                if (contribTotalDecimal >= metaTemporalExigida) {
+                    validaPedagio50 = true;
+                    elegibilidadeConfirmada = true;
+                    parecerPedagio50 = "Elegível. Atenção: Esta regra aplica o fator previdenciário.";
+                } else {
+                    parecerPedagio50 = `Restam ${(metaTemporalExigida - contribTotalDecimal).toFixed(1)} anos para pagar o pedágio.`;
+                }
+            } else if (contrib2019Decimal >= reqContrib) {
+                validaPedagio50 = true;
+                elegibilidadeConfirmada = true;
+                parecerPedagio50 = "Direito Adquirido antes da reforma.";
+            } else {
+                let textReq = sexo === 'M' ? "33 anos" : "28 anos";
+                parecerPedagio50 = `Incompatível. Exigia-se ${textReq} de contribuição até Nov/2019.`;
+            }
+            resultados.push({ nome: "Transição: Pedágio 50%", status: validaPedagio50, detalhe: parecerPedagio50 });
+
+            // 4. Pedágio 100%
+            let validaPedagio100 = false;
+            let parecerPedagio100 = "";
+            
+            if (contrib2019Decimal < reqContrib) {
+                let tempoFaltante100 = reqContrib - contrib2019Decimal;
+                let metaTemporalExigida100 = reqContrib + tempoFaltante100;
+                
+                if (contribTotalDecimal >= metaTemporalExigida100 && idadeDecimal >= reqPedagioIdade) {
+                    validaPedagio100 = true;
+                    elegibilidadeConfirmada = true;
+                    parecerPedagio100 = "Elegível. Vantagem: Recebimento integral sem fator previdenciário.";
+                } else {
+                    parecerPedagio100 = `Requer ${reqPedagioIdade} anos de idade e ${(metaTemporalExigida100).toFixed(1)} anos totais de contribuição.`;
+                }
+            } else {
+                 validaPedagio100 = true;
+                 elegibilidadeConfirmada = true;
+                 parecerPedagio100 = "Direito Adquirido.";
+            }
+            resultados.push({ nome: "Transição: Pedágio 100%", status: validaPedagio100, detalhe: parecerPedagio100 });
+
+            // 5. Idade Geral (Regra Definitiva)
+            let validaIdadeGeral = (idadeDecimal >= regraIdadeGeral && contribTotalDecimal >= reqContribGeral);
+            if (validaIdadeGeral) elegibilidadeConfirmada = true;
+            resultados.push({
+                nome: "Aposentadoria por Idade (Regra Definitiva)",
+                status: validaIdadeGeral,
+                detalhe: validaIdadeGeral ? "Elegível." : `Exige ${regraIdadeGeral} anos de idade e ${reqContribGeral} anos de contribuição.`
+            });
+
+            // Renderização
+            const resultBox = document.getElementById('result-box');
+            const resultContent = document.getElementById('results-content');
+            resultBox.style.display = 'block';
+            resultBox.className = elegibilidadeConfirmada ? 'result-success' : 'result-warning';
+            
+            let montagemHTML = "";
+            resultados.forEach(regra => {
+                let badge = regra.status ? "badge-yes" : "badge-no";
+                let badgeText = regra.status ? "ELEGÍVEL" : "PENDENTE";
+                montagemHTML += `
+                    <div class="result-item">
+                        <div class="result-title">${regra.nome}</div>
+                        <span class="status-badge ${badge}">${badgeText}</span>
+                        <div style="font-size: 0.95rem; color: var(--text-muted);">${regra.detalhe}</div>
+                    </div>
+                `;
+            });
+
+            if(elegibilidadeConfirmada) {
+                montagemHTML += `<p style="margin-top:1.5rem; color: var(--success-green); font-weight: 600;">Seus dados indicam possibilidade de aposentadoria! Entre em contato para validarmos as documentações (CNIS) e maximizarmos o valor do seu benefício.</p>`;
+            } else {
+                montagemHTML += `<p style="margin-top:1.5rem; color: var(--accent-gold); font-weight: 600;">O momento ideal de agir é antes de completar os requisitos. Um planejamento previdenciário pode evitar perdas financeiras enormes. Agende sua consultoria.</p>`;
+            }
+
+            resultContent.innerHTML = montagemHTML;
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    </script>
+</body>
+</html>
