@@ -5,47 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
-    <!-- TÍTULO E DESCRIÇÃO PRINCIPAIS -->
     <title>Advogado Previdenciário | Especialista em Aposentadoria INSS</title>
     <meta name="description" content="Especialista em Direito Previdenciário e Aposentadoria. Planejamento estratégico de alto nível. Atendimento em Salvador e todo o Brasil com excelência.">
-    <meta name="keywords" content="advogado previdenciário salvador, planejamento previdenciário, aposentadoria INSS, advogado online, aposentadoria por idade, revisão de benefícios">
-    <meta name="author" content="Dr. Reginaldo - Advogado Nômade Premium">
     
-    <!-- SEO AVANÇADO: CANONICAL E GOOGLE SEARCH CONSOLE -->
     <link rel="canonical" href="https://www.advogadonomade.com.br/previdencia">
-    <!-- ATENÇÃO: Substitua o 'COLE_SEU_CODIGO_AQUI' pelo código fornecido no painel do Google Search Console -->
     <meta name="google-site-verification" content="COLE_SEU_CODIGO_AQUI" />
-
-    <!-- OPEN GRAPH (Otimização para compartilhamento no WhatsApp, Facebook, LinkedIn) -->
+    
     <meta property="og:title" content="Advocacia Previdenciária de Elite | Advogado Nômade">
     <meta property="og:description" content="Garanta a melhor aposentadoria possível com um planejamento previdenciário estratégico e personalizado. Atendimento em todo o Brasil.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1200&auto=format&fit=crop">
+    <meta property="og:image" content="https://www.advogadonomade.com.br/assets/og-image.jpg">
     <meta property="og:url" content="https://www.advogadonomade.com.br/previdencia">
     <meta property="og:type" content="website">
     
-    <!-- FONTES DO GOOGLE -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-
-    <!-- SCHEMA MARKUP (Dados estruturados para o Google entender que é um negócio local/serviço jurídico) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LegalService",
-      "name": "Advogado Nômade - Especialista Previdenciário",
-      "image": "https://www.advogadonomade.com.br/logo.png",
-      "description": "Consultoria jurídica previdenciária premium e planejamento estratégico de aposentadoria.",
-      "url": "https://www.advogadonomade.com.br/previdencia",
-      "telephone": "+5571983008001",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Salvador",
-        "addressRegion": "BA",
-        "addressCountry": "BR"
-      }
-    }
-    </script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
@@ -88,15 +64,18 @@
         }
 
         .logo {
-            font-family: var(--font-serif);
+            font-family: var(--font-sans);
             font-size: 1.5rem;
             color: var(--text-light);
             font-weight: 700;
             text-decoration: none;
-            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .logo span { color: var(--accent-gold); }
+        .logo i { color: var(--accent-gold); }
+        .logo span { color: var(--text-muted); font-family: var(--font-serif); font-size: 1.2rem; font-style: italic; }
 
         .nav-links {
             display: flex;
@@ -128,7 +107,6 @@
             color: #000!important;
         }
 
-        /* Hero Section com Imagem Premium Estática */
         .hero-section {
             position: relative;
             min-height: 100vh;
@@ -141,19 +119,19 @@
             background-color: var(--bg-dark);
         }
 
-        /* Nova classe de background substituindo o vídeo */
+        /* Fundo com caminho absoluto blindado contra erros de pasta */
         .hero-bg {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=2070&auto=format&fit=crop');
+            background-image: url('https://www.advogadonomade.com.br/fundo.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Efeito parallax suave */
+            background-attachment: fixed;
             z-index: 0;
-            opacity: 0.35; /* Mantém a imagem sutil e elegante */
+            opacity: 0.40;
         }
 
         .overlay {
@@ -257,7 +235,6 @@
             background-color: rgba(212, 175, 55, 0.05);
         }
 
-        /* Bento Grid Moderno */
         .bento-section {
             position: relative;
             z-index: 2;
@@ -380,16 +357,17 @@
 <body>
 
     <nav class="navbar">
-        <a href="index.html" class="logo">Advogado Nômade <span>Previdência</span></a>
+        <a href="https://www.advogadonomade.com.br" class="logo">
+            <i class="fas fa-balance-scale"></i> Dr.Reginaldo <span> | Previdência</span>
+        </a>
         <div class="nav-links">
-            <a href="index.html" class="active">Início</a>
-            <a href="calculadora.html">Simulador INSS 2026</a>
+            <a href="https://www.advogadonomade.com.br" class="active">Página Principal</a>
+            <a href="calculadora.html">Simulador INSS</a>
             <a href="https://wa.me/5571983008001" target="_blank" class="nav-btn">Falar com Especialista</a>
         </div>
     </nav>
 
     <section class="hero-section">
-        <!-- Background Premium substitui o vídeo -->
         <div class="hero-bg"></div>
         <div class="overlay"></div>
 
