@@ -9,12 +9,6 @@
     <meta name="description" content="Especialista em Direito Previdenciário e Aposentadoria. Planejamento estratégico de alto nível. Atendimento em Salvador e todo o Brasil com excelência.">
     <meta name="keywords" content="advogado previdenciário salvador, planejamento previdenciário, aposentadoria INSS, advogado online, aposentadoria por idade, revisão de benefícios">
     <meta name="author" content="Dr. Reginaldo - Advogado Nômade Premium">
-    <meta name="robots" content="index, follow">
-
-    <meta property="og:title" content="Advocacia Previdenciária Premium | Aposentadoria e Planejamento">
-    <meta property="og:description" content="Proteja seu patrimônio e garanta a melhor aposentadoria possível com uma atuação jurídica estratégica e inovadora.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.advogadonomade.com.br/previdencia">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +20,7 @@
       "@type": "LegalService",
       "name": "Advogado Nômade - Especialista Previdenciário",
       "image": "https://www.advogadonomade.com.br/logo.png",
-      "description": "Consultoria jurídica previdenciária premium, planejamento estratégico de aposentadoria e revisões do INSS.",
+      "description": "Consultoria jurídica previdenciária premium e planejamento estratégico de aposentadoria.",
       "url": "https://www.advogadonomade.com.br/previdencia",
       "telephone": "+5571983008001",
       "address": {
@@ -34,20 +28,17 @@
         "addressLocality": "Salvador",
         "addressRegion": "BA",
         "addressCountry": "BR"
-      },
-      "priceRange": "$$$",
-      "areaServed": "BR"
+      }
     }
     </script>
 
     <style>
-        /* Variáveis de Identidade Visual Premium (Midnight Blue & Gold) */
         :root {
             --bg-dark: #0A0F1C; 
             --bg-card: rgba(15, 23, 42, 0.65); 
             --text-light: #F8FAFC;
             --text-muted: #94A3B8;
-            --accent-gold: #D4AF37; /* Ouro Polido Premium */
+            --accent-gold: #D4AF37; 
             --accent-gold-hover: #B5952F;
             --font-sans: 'Inter', sans-serif;
             --font-serif: 'Playfair Display', serif;
@@ -64,7 +55,43 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Estrutura Hero com Vídeo de Fundo Cinematográfico */
+        /* Navegação Harmonizada */
+       .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+
+       .logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            color: var(--text-light);
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+       .logo span { color: var(--accent-gold); }
+
+       .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 2.5rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+       .nav-links a:hover,.nav-links a.active { color: var(--accent-gold); }
+
        .hero-section {
             position: relative;
             min-height: 100vh;
@@ -87,10 +114,9 @@
             transform: translateX(-50%) translateY(-50%);
             z-index: 0;
             object-fit: cover;
-            opacity: 0.6;
+            opacity: 0.5;
         }
 
-        /* Sobreposição Gradiente para Legibilidade e Tom Premium */
        .overlay {
             position: absolute;
             top: 0;
@@ -132,6 +158,8 @@
             color: var(--text-light);
         }
 
+       .hero-content h1 span { color: var(--accent-gold); }
+
        .hero-content p {
             font-size: 1.25rem;
             color: var(--text-muted);
@@ -142,19 +170,20 @@
             margin-right: auto;
         }
 
-       .btn-primary {
-            display: inline-flex;
-            align-items: center;
+       .btn-group {
+            display: flex;
+            gap: 1.5rem;
             justify-content: center;
+        }
+
+       .btn-primary {
             background-color: var(--accent-gold);
             color: #000;
             font-weight: 700;
-            padding: 1.2rem 3rem;
+            padding: 1.2rem 2.5rem;
             border-radius: 4px;
             text-decoration: none;
             transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
             font-size: 1.1rem;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -167,7 +196,28 @@
             box-shadow: 0 15px 35px rgba(212, 175, 55, 0.4);
         }
 
-        /* Tendência 2026: Bento Grid Layout para Serviços */
+       .btn-secondary {
+            background-color: transparent;
+            color: var(--text-light);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            font-weight: 700;
+            padding: 1.2rem 2.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            backdrop-filter: blur(5px);
+        }
+
+       .btn-secondary:hover {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+            background-color: rgba(212, 175, 55, 0.05);
+        }
+
+        /* Bento Grid */
        .bento-section {
             position: relative;
             z-index: 2;
@@ -189,10 +239,7 @@
             margin-bottom: 1rem;
         }
 
-       .section-header h2 span {
-            color: var(--accent-gold);
-            font-style: italic;
-        }
+       .section-header h2 span { color: var(--accent-gold); font-style: italic; }
 
        .bento-grid {
             display: grid;
@@ -208,7 +255,7 @@
             border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 20px;
             padding: 2.5rem;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.4s ease;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -220,7 +267,6 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
         }
 
-        /* Configuração de tamanhos do Bento Grid */
        .card-large {
             grid-column: span 2;
             background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%);
@@ -232,11 +278,7 @@
             border-top: 2px solid var(--accent-gold);
         }
 
-       .bento-icon {
-            font-size: 2.5rem;
-            color: var(--accent-gold);
-            margin-bottom: 1.5rem;
-        }
+       .bento-icon { font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 1.5rem; }
 
        .bento-card h3 {
             font-family: var(--font-serif);
@@ -245,13 +287,8 @@
             color: var(--text-light);
         }
 
-       .bento-card p {
-            color: var(--text-muted);
-            font-size: 1rem;
-            font-weight: 300;
-        }
+       .bento-card p { color: var(--text-muted); font-size: 1rem; font-weight: 300; }
 
-        /* Barra de Confiança Legal */
        .trust-bar {
             background: #060913;
             padding: 2rem 0;
@@ -267,30 +304,36 @@
             text-transform: uppercase;
         }
 
-        /* Responsividade Extrema */
+        /* Responsividade */
         @media (max-width: 992px) {
            .hero-content h1 { font-size: 3.5rem; }
-           .bento-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+           .bento-grid { grid-template-columns: repeat(2, 1fr); }
            .card-large { grid-column: span 2; }
            .card-vertical { grid-row: span 1; grid-column: span 2; }
+           .navbar { flex-direction: column; gap: 1rem; }
+           .nav-links a { margin: 0 1rem; }
         }
 
         @media (max-width: 768px) {
            .hero-content h1 { font-size: 2.8rem; }
-           .hero-content p { font-size: 1.1rem; }
-           .bento-grid {
-                grid-template-columns: 1fr;
-            }
-           .card-large,.card-vertical {
-                grid-column: span 1;
-            }
-           .bento-card { padding: 2rem; }
+           .btn-group { flex-direction: column; }
+           .bento-grid { grid-template-columns: 1fr; }
+           .card-large,.card-vertical { grid-column: span 1; }
+           .nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+           .nav-links a { margin: 0; }
         }
     </style>
 </head>
 <body>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">Advogado Nômade <span>Previdência</span></a>
+        <div class="nav-links">
+            <a href="index.html" class="active">Início</a>
+            <a href="calculadora.html">Calculadora INSS 2026</a>
+            <a href="https://wa.me/5571983008001" target="_blank">Falar com Especialista</a>
+        </div>
+    </nav>
 
     <section class="hero-section">
         <video class="video-bg" autoplay loop muted playsinline>
@@ -303,9 +346,10 @@
             <h1>Proteja o patrimônio de uma <span>vida inteira</span>.</h1>
             <p>Navegar pelas complexas regras do INSS não é tarefa para modelos padronizados. Exige uma visão estratégica, profunda e personalizada. Garanta a melhor aposentadoria possível ao lado de especialistas que tratam o seu direito como um projeto de vida.</p>
             
-            <a href="https://wa.me/5571983008001?text=Olá,%20acessei%20o%20site%20e%20gostaria%20de%20agendar%20minha%20consultoria%20previdenciária%20premium." target="_blank" class="btn-primary">
-                Falar com um Especialista
-            </a>
+            <div class="btn-group">
+                <a href="https://wa.me/5571983008001?text=Olá,%20acessei%20o%20site%20e%20gostaria%20de%20agendar%20minha%20consultoria%20previdenciária%20premium." target="_blank" class="btn-primary">Agendar Consultoria</a>
+                <a href="calculadora.html" class="btn-secondary">Simular Aposentadoria</a>
+            </div>
         </div>
     </section>
 
