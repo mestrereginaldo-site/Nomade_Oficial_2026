@@ -55,20 +55,25 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Navegação Harmonizada */
-       .navbar {
-            position: absolute;
+        /* Menu de Navegação Glassmorphism */
+        .navbar {
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            padding: 2rem 5%;
+            padding: 1.5rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            z-index: 10;
+            z-index: 100;
+            background: rgba(10, 15, 28, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
         }
 
-       .logo {
+        .logo {
             font-family: var(--font-serif);
             font-size: 1.5rem;
             color: var(--text-light);
@@ -77,22 +82,40 @@
             letter-spacing: 1px;
         }
 
-       .logo span { color: var(--accent-gold); }
+        .logo span { color: var(--accent-gold); }
 
-       .nav-links a {
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a {
             color: var(--text-light);
             text-decoration: none;
             margin-left: 2.5rem;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.90rem;
             transition: color 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
-       .nav-links a:hover,.nav-links a.active { color: var(--accent-gold); }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent-gold); }
 
-       .hero-section {
+        .nav-btn {
+            border: 1px solid var(--accent-gold);
+            padding: 0.6rem 1.5rem;
+            border-radius: 4px;
+            color: var(--accent-gold)!important;
+        }
+        
+        .nav-btn:hover {
+            background: var(--accent-gold);
+            color: #000!important;
+        }
+
+        /* Hero Section com Vídeo de Fundo */
+        .hero-section {
             position: relative;
             min-height: 100vh;
             display: flex;
@@ -103,7 +126,7 @@
             text-align: center;
         }
 
-       .video-bg {
+        .video-bg {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -117,22 +140,23 @@
             opacity: 0.5;
         }
 
-       .overlay {
+        .overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(180deg, rgba(10, 15, 28, 0.85) 0%, rgba(10, 15, 28, 0.4) 50%, rgba(10, 15, 28, 1) 100%);
+            background: linear-gradient(180deg, rgba(10, 15, 28, 0.7) 0%, rgba(10, 15, 28, 0.4) 50%, rgba(10, 15, 28, 1) 100%);
             z-index: 1;
         }
 
-       .hero-content {
+        .hero-content {
             position: relative;
             z-index: 2;
             max-width: 900px;
             margin: 0 auto;
             animation: fadeIn 1.5s ease-out;
+            padding-top: 4rem;
         }
 
         @keyframes fadeIn {
@@ -140,7 +164,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-       .tagline {
+        .tagline {
             color: var(--accent-gold);
             font-weight: 600;
             letter-spacing: 2px;
@@ -150,7 +174,7 @@
             display: block;
         }
 
-       .hero-content h1 {
+        .hero-content h1 {
             font-family: var(--font-serif);
             font-size: 4.5rem;
             line-height: 1.1;
@@ -158,9 +182,9 @@
             color: var(--text-light);
         }
 
-       .hero-content h1 span { color: var(--accent-gold); }
+        .hero-content h1 span { color: var(--accent-gold); }
 
-       .hero-content p {
+        .hero-content p {
             font-size: 1.25rem;
             color: var(--text-muted);
             margin-bottom: 3rem;
@@ -170,13 +194,13 @@
             margin-right: auto;
         }
 
-       .btn-group {
+        .btn-group {
             display: flex;
             gap: 1.5rem;
             justify-content: center;
         }
 
-       .btn-primary {
+        .btn-primary {
             background-color: var(--accent-gold);
             color: #000;
             font-weight: 700;
@@ -190,13 +214,13 @@
             box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2);
         }
 
-       .btn-primary:hover {
+        .btn-primary:hover {
             background-color: var(--accent-gold-hover);
             transform: translateY(-3px);
             box-shadow: 0 15px 35px rgba(212, 175, 55, 0.4);
         }
 
-       .btn-secondary {
+        .btn-secondary {
             background-color: transparent;
             color: var(--text-light);
             border: 1px solid rgba(255, 255, 255, 0.3);
@@ -211,14 +235,14 @@
             backdrop-filter: blur(5px);
         }
 
-       .btn-secondary:hover {
+        .btn-secondary:hover {
             border-color: var(--accent-gold);
             color: var(--accent-gold);
             background-color: rgba(212, 175, 55, 0.05);
         }
 
-        /* Bento Grid */
-       .bento-section {
+        /* Bento Grid Moderno */
+        .bento-section {
             position: relative;
             z-index: 2;
             padding: 6rem 2rem;
@@ -227,28 +251,28 @@
             margin: 0 auto;
         }
 
-       .section-header {
+        .section-header {
             text-align: center;
             margin-bottom: 4rem;
         }
 
-       .section-header h2 {
+        .section-header h2 {
             font-family: var(--font-serif);
             font-size: 3rem;
             color: var(--text-light);
             margin-bottom: 1rem;
         }
 
-       .section-header h2 span { color: var(--accent-gold); font-style: italic; }
+        .section-header h2 span { color: var(--accent-gold); font-style: italic; }
 
-       .bento-grid {
+        .bento-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: auto auto;
             gap: 1.5rem;
         }
 
-       .bento-card {
+        .bento-card {
             background: var(--bg-card);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
@@ -259,44 +283,60 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            position: relative;
+            overflow: hidden;
         }
 
-       .bento-card:hover {
+        /* Efeito de brilho no hover */
+        .bento-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+            transform: translateX(-100%);
+            transition: 0.6s;
+        }
+
+        .bento-card:hover::before {
+            transform: translateX(100%);
+        }
+
+        .bento-card:hover {
             transform: translateY(-10px);
             border-color: rgba(212, 175, 55, 0.5);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
         }
 
-       .card-large {
+        .card-large {
             grid-column: span 2;
             background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%);
         }
 
-       .card-vertical {
+        .card-vertical {
             grid-row: span 2;
-            background: linear-gradient(180deg, rgba(212, 175, 55, 0.1) 0%, rgba(15, 23, 42, 0.8) 100%);
+            background: linear-gradient(180deg, rgba(212, 175, 55, 0.05) 0%, rgba(15, 23, 42, 0.8) 100%);
             border-top: 2px solid var(--accent-gold);
         }
 
-       .bento-icon { font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 1.5rem; }
+        .bento-icon { font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 1.5rem; }
 
-       .bento-card h3 {
+        .bento-card h3 {
             font-family: var(--font-serif);
             font-size: 1.8rem;
             margin-bottom: 1rem;
             color: var(--text-light);
         }
 
-       .bento-card p { color: var(--text-muted); font-size: 1rem; font-weight: 300; }
+        .bento-card p { color: var(--text-muted); font-size: 1rem; font-weight: 300; }
 
-       .trust-bar {
+        .trust-bar {
             background: #060913;
             padding: 2rem 0;
             text-align: center;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-       .trust-bar p {
+        .trust-bar p {
             font-size: 0.85rem;
             color: #64748B;
             font-weight: 400;
@@ -306,21 +346,20 @@
 
         /* Responsividade */
         @media (max-width: 992px) {
-           .hero-content h1 { font-size: 3.5rem; }
-           .bento-grid { grid-template-columns: repeat(2, 1fr); }
-           .card-large { grid-column: span 2; }
-           .card-vertical { grid-row: span 1; grid-column: span 2; }
-           .navbar { flex-direction: column; gap: 1rem; }
-           .nav-links a { margin: 0 1rem; }
+            .hero-content h1 { font-size: 3.5rem; }
+            .bento-grid { grid-template-columns: repeat(2, 1fr); }
+            .card-large { grid-column: span 2; }
+            .card-vertical { grid-row: span 1; grid-column: span 2; }
         }
 
         @media (max-width: 768px) {
-           .hero-content h1 { font-size: 2.8rem; }
-           .btn-group { flex-direction: column; }
-           .bento-grid { grid-template-columns: 1fr; }
-           .card-large,.card-vertical { grid-column: span 1; }
-           .nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-           .nav-links a { margin: 0; }
+            .navbar { flex-direction: column; gap: 1rem; padding: 1rem; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 10px; }
+            .nav-links a { margin: 0 10px; }
+            .hero-content h1 { font-size: 2.8rem; }
+            .btn-group { flex-direction: column; }
+            .bento-grid { grid-template-columns: 1fr; }
+            .card-large, .card-vertical { grid-column: span 1; }
         }
     </style>
 </head>
@@ -330,14 +369,15 @@
         <a href="index.html" class="logo">Advogado Nômade <span>Previdência</span></a>
         <div class="nav-links">
             <a href="index.html" class="active">Início</a>
-            <a href="calculadora.html">Calculadora INSS 2026</a>
-            <a href="https://wa.me/5571983008001" target="_blank">Falar com Especialista</a>
+            <a href="calculadora.html">Simulador INSS 2026</a>
+            <a href="https://wa.me/5571983008001" target="_blank" class="nav-btn">Falar com Especialista</a>
         </div>
     </nav>
 
     <section class="hero-section">
         <video class="video-bg" autoplay loop muted playsinline>
-            <source src="https://cdn.pixabay.com/video/2021/08/19/85536-590038446_large.mp4" type="video/mp4">
+            <!-- AQUI ESTÁ A CORREÇÃO: Usando um arquivo local. -->
+            <source src="video.mp4" type="video/mp4">
         </video>
         <div class="overlay"></div>
 
